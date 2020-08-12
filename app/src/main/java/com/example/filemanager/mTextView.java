@@ -1,6 +1,7 @@
 package com.example.filemanager;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -18,10 +19,15 @@ public class mTextView extends View {
     private Paint translationPaint;
     public mTextView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
+        TypedArray typedArray = context.obtainStyledAttributes(attrs,R.styleable.mTextView);
+        int textColor=typedArray.getColor(R.styleable.mTextView_mTextColor,Color.RED);
+        float textSize=typedArray.getDimensionPixelOffset(R.styleable.mTextView_mTextSize,30);
+        typedArray.recycle();
+
         paint = new Paint();
         paint.setAntiAlias(true);
-        paint.setColor(Color.RED);
-        paint.setTextSize(30);
+        paint.setColor(textColor);
+        paint.setTextSize(textSize);
 
         translationPaint=new Paint();
         translationPaint.setColor(Color.TRANSPARENT);

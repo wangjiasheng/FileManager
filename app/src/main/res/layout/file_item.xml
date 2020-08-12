@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="120dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="120dp"
     android:layout_height="match_parent"
     android:focusable="true"
     android:background="@drawable/selector_detail_series_desc"
@@ -15,10 +17,13 @@
         >
     </ImageView>
     <com.example.filemanager.mTextView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/mName"
         android:layout_width="100dp"
         android:layout_height="match_parent"
         android:layout_above="@+id/mIcon"
+        app:mTextColor="#ffff0000"
+        app:mTextSize="30px"
         >
     </com.example.filemanager.mTextView>
 </RelativeLayout>
