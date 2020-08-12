@@ -22,7 +22,7 @@
         android:layout_width="100dp"
         android:layout_height="match_parent"
         android:layout_above="@+id/mIcon"
-        app:mTextColor="#ffff0000"
+        app:mTextColor="#ff00ff"
         app:mTextSize="30px"
         >
     </com.example.filemanager.mTextView>
