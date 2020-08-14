@@ -48,6 +48,16 @@ public class mTextView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
+        Impl2(canvas);
+    }
+    public void Impl2(Canvas canvas){
+        Paint.FontMetrics metrics=paint.getFontMetrics();
+        float f=(metrics.bottom-metrics.top)/2-metrics.bottom;
+        canvas.rotate(270,getWidth()/2,getHeight()/2);
+        canvas.drawText(text,-getHeight()/2+getWidth()/2+getPaddingLeft(),getHeight()/2+f,paint);
+        canvas.rotate(90,getWidth()/2,getHeight()/2);
+    }
+    public void Impl1(Canvas canvas){
         Paint.FontMetrics metrics=paint.getFontMetrics();
         float f=(metrics.bottom-metrics.top)/2-metrics.bottom;
 
@@ -55,7 +65,7 @@ public class mTextView extends View {
         Bitmap bitmap= Bitmap.createBitmap(getHeight(),getWidth(), Bitmap.Config.ARGB_8888);
         Canvas bitmapCanvas=new Canvas(bitmap);
 
-        bitmapCanvas.drawText(text,20,bitmap.getHeight()/2+f,paint);
+        bitmapCanvas.drawText(text,getPaddingLeft(),bitmap.getHeight()/2+f,paint);
 
         Bitmap bitmap2=Bitmap.createBitmap(getWidth(),getHeight(), Bitmap.Config.ARGB_8888);
         Canvas canvas2=new Canvas(bitmap2);
